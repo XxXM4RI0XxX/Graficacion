@@ -2,14 +2,14 @@ import cv2
 import numpy as np
 
 # Crear dos imágenes en negro
-img1 = np.zeros((300, 300), dtype=np.uint8)
-img2 = np.zeros((300, 300), dtype=np.uint8)
+img1 = np.zeros((300, 300,3), dtype=np.uint8)*0
+img2 = np.zeros((300, 300,3), dtype=np.uint8)*0
 
-# Dibujar un rectángulo blanco en img1
-cv2.rectangle(img1, (50, 50), (250, 250), 255, -1)
+# Dibujar un rectángulo azul en img1
+cv2.rectangle(img1, (50, 50), (250, 250), (255,0,0), -1)
 
-# Dibujar un círculo blanco en img2
-cv2.circle(img2, (150, 150), 100, 255, -1)
+# Dibujar un círculo rosa en img2
+cv2.circle(img2, (150, 150), 100, (255,0,255), -1)
 
 # Aplicar la operación bitwise AND
 result = cv2.bitwise_and(img1, img2)

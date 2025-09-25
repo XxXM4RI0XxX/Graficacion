@@ -15,7 +15,7 @@ upper_green = np.array([80, 200, 255])  # Hue, Saturación, Brillo máximos
 mask = cv2.inRange(hsv, lower_green, upper_green)
 
 # Aplicar la máscara a la imagen original
-result = cv2.bitwise_and(img, img, mask=mask)
+result = cv2.bitwise_not(img, img, mask=mask)
 
 # Mostrar la imagen original y la imagen con el color detectado
 cv2.imshow("Imagen Original", img)
